@@ -1,9 +1,9 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "jonnychipz-infra"
-    storage_account_name = "jonnychipztstate"
+    resource_group_name  = "TFsilverRG"
+    storage_account_name = "tfstate871348521"
     container_name       = "tstate"
-    key                  = "77Q4LUB5o9wRdbPYDt+0kGZP+L8Sj9E/FNXg7lZBQS5z3mLod5cyan4wA19CR1SmlqIRUFQfhuQrPVaGzNhjGw=="
+    key                  = "terraform.tfstate"
   }
 
   required_providers {
@@ -15,11 +15,8 @@ terraform {
   }
 }
 provider "azurerm" {
-  features {
-    key_vault {
-      purge_soft_delete_on_destroy = true
-    }
-  }
+  features {}
+    
 }
 data "azurerm_client_config" "current" {}
 # Create our Resource Group - Jonnychipz-RG
